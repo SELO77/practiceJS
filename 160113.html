@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>160113</title>
+</head>
+<body>
+	<div class="showSomething">this is first</div>
+	<div id="forWrite">for Write: </div>
+	<button onclick="document.write('onclick write')">try it</button>
+	<!-- onclick 에서 javascript 설정 -->
+	<button onclick="javascript:towrite();">try it 2</button>
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		var tryIt2Count = 0;
+
+		document.write('hello world');
+		var showSomething = document.getElementsByClassName("showSomething");
+		
+		var towrite = function(){
+			console.log('In write fnc');
+			tryIt2Count++;
+			//innerHTML 속성은 선택된 객체의 
+			document.getElementById("forWrite").innerHTML = "innerHTML attr, ClickCount :"+tryIt2Count;
+			
+			console.log('tryIt2Count :'+tryIt2Count);
+		}
+		console.log(showSomething[0]);
+		console.log(showSomething);
+
+		//towrite();
+
+		$('.showSomething').on('click', function(event) {
+			event.preventDefault();
+			console.log(event);
+		});		
+	</script>
+
+</body>
+</html>

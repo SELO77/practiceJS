@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="showDate"></div>
+    <div class="showTime"></div>
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        var date = new Date();
+        var time = date.getTime();
+
+        var showDate = document.getElementsByClassName("showDate");
+
+        $('.showDate').text(date);
+        $('.showTime').text(time);
+
+        showDate[0].innerHTML = "Hello World";
+
+        /*
+            Description:
+            The Function constructor creates a new Function object. In JavaScript every function is actually a Function object.
+        
+            Syntax:
+            new Function ([arg1[, arg2[, ...argN]],] functionBody)
+        */
+       
+       var fnc = function(){
+        console.log('funtion variable!!!!');
+        //document.write()
+        document.getElementsByClassName("showTime")[0].innerHTML = " It's a showTime ";
+       }
+       fnc();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- HTML4 charset -->
+	<!-- <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> -->
+	<!-- HTML5 charset -->
+</head>
+<body>
+
+
+	<script>
+	// 매개변수 : 함수를 호출하는 쪽과 함수를 연결하는 매개가 되는 변수이므로 매개변수라는 이름으로 명칭하게됨.
+		console.log("it's working");
+		// array()  어레이함수를 살펴보자.
+		
+		// var array1 = Array();
+		// console.log(Array());
+		// console.log(Array('1'));
+		// console.log(Array('2').length);
+
+		// array1.push(1,2,3);
+		// console.log(array1);
+		// // Array().pop() LIFO Last IN First OUT
+		// // pop() remove the last element and return that element
+		// var popVal = array1.pop();
+		// console.log(array1);
+		// console.log(popVal);
+
+		// 가변인자함수 : 가변인자함수는 매개변수의 개수가 변할 수 있는 함수다. 매개변수를 선언된
+		// 형태와 다르게 사용했을 때, 매개변수를 모두 활용하는 함수를 뜻한다.
+		// 대표적인 가변인자함수 예 Array() 함수.
+		// Arrary() : 빈 배열을 만듬, Array(number) : number 크기의 배열을 생성, Arrary(any, any, any) 매개변수를 배열로 만듬
+		// 
+		
+		
+
+		function sumAll () {
+			//console.log('=='+argument);
+			//
+			var argumentsLength = arguments.length;
+			console.log('argumentsLength :'+argumentsLength);
+			if (argumentsLength === 1) {
+				console.log(arguments);
+			}else if(argumentsLength === 2){
+				console.log( typeof(arguments), arguments.length );
+			}else if(argumentsLength === 3){
+				console.log('arguments[0].c2SoftEmployees[0].firstName :'+arguments[0].c2SoftEmployees[0].firstName); 
+			};
+
+			console.log('sumAll() END');	
+					
+			
+			//자바스크립트의 모든 함수 내부에는 변수 arguments를 default로 갖는다.
+			//여기서 arguments는 매개변수의 배열이다.
+			
+			// arguments는 타입은 당근 객체. Array is Object
+			
+			
+			
+		}
+
+		//전파트에서 배운 JSON을 응용해서 가변인자함수를 사용해보자.
+		var chanJSON = '{ "c2SoftEmployees" : [ { "firstName" : "Selo", "lastName" : "Lee" },' 
+					+ '{ "firstName" : "HyunMin", "lastName" : "Choi" }]}';
+
+		sumAll(JSON.parse(chanJSON),36652284,'hi');
+
+
+		
+
+	</script>
+</body>
+</html>

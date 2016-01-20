@@ -1,121 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
 </head>
 <body>
-	<div class="">
-		<span></span><span></span>
-	</div>
+    <div class="">
+        <span></span><span></span>
+    </div>
 
 
-	<script src="https://code.jquery.com/jquery-latest.js"></script>
-	<script>
-		//160114 Hava a nice day
-		
-		//javaScript Object
-		var car = {
-			name : "spark",
-			model : 'small',
-			color : 'silver',
-			information : function(){
-				return 'car information ( name :'+this.name+", model :"+this.model+ ' )';
-			},
-			star : function(){
-				console.log('engine started');
-			},
-			drive : function(){
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        //160114 Hava a nice day
+        
+        //javaScript Object
+        var car = {
+            name : "spark",
+            model : 'small',
+            color : 'silver',
+            information : function(){
+                return 'car information ( name :'+this.name+", model :"+this.model+ ' )';
+            },
+            star : function(){
+                console.log('engine started');
+            },
+            drive : function(){
 
-			},
-			brake : function(){
+            },
+            brake : function(){
 
-			},
-			stop : function(){
+            },
+            stop : function(){
 
-			}
-		}
-		var information = car.information();
-		console.log(information);
-		car.star();
-		console.log(car.name);
+            }
+        }
+        var information = car.information();
+        console.log(information);
+        car.star();
+        console.log(car.name);
 
-		//JavaScript Data Types 
-		// number, String, Array, Object
-		var length = 16; 
-		var name = "SELO";
-		var cars = ["spark","Malibu","Sportage"];
-		var person = { name:"name", height:"160cm" };
+        //JavaScript Data Types 
+        // number, String, Array, Object
+        var length = 16; 
+        var name = "SELO";
+        var cars = ["spark","Malibu","Sportage"];
+        var person = { name:"name", height:"160cm" };
 
-		//JavaScript Best Practices 
-		//1. Avoid Global Variables : Minimize the user of global variables.
-		//	WHY? Gloval Variables and functions can be overwritten by other scripts.
-		//	Use local variables instead, and learn how to use closures.
-		//	
-		//2. Always Declare Local Variables
-		//	All variables used in a function should be declared as local variables
-		//	Local variables must be declared with the var keyword, otherwise they will become global variables
-		//	
-		//3. Declarations on Top
-		//	EX)
-		//	Declare at the beginning
-		var firstName, lastName, price, discount;
+        //JavaScript Best Practices 
+        //1. Avoid Global Variables : Minimize the user of global variables.
+        //  WHY? Gloval Variables and functions can be overwritten by other scripts.
+        //  Use local variables instead, and learn how to use closures.
+        //  
+        //2. Always Declare Local Variables
+        //  All variables used in a function should be declared as local variables
+        //  Local variables must be declared with the var keyword, otherwise they will become global variables
+        //  
+        //3. Declarations on Top
+        //  EX)
+        //  Declare at the beginning
+        var firstName, lastName, price, discount;
 
-		// User later
-		firstName = "SELO";
-		lastName = "Lee";
+        // User later
+        firstName = "SELO";
+        lastName = "Lee";
 
-		//4. Initialize Varialbes
-		var mouseName = "",
-			myArray = [],
-			myObject = {};
+        //4. Initialize Varialbes
+        var mouseName = "",
+            myArray = [],
+            myObject = {};
 
-		//5. Never Declare primitive values as objects
-		// Declaring these types as objects, slows down execution speed, and produces nasty side effects
-		//EX)
-		
-		var justString = "SELO"; // is String
-		var stringObject = new String("SELO"); // is Object
-		if ( justString === stringObject ) {
-			console.log(true);
-		}else{
-			console.log(false);
-		};
+        //5. Never Declare primitive values as objects
+        // Declaring these types as objects, slows down execution speed, and produces nasty side effects
+        //EX)
+        
+        var justString = "SELO"; // is String
+        var stringObject = new String("SELO"); // is Object
+        if ( justString === stringObject ) {
+            console.log(true);
+        }else{
+            console.log(false);
+        };
 
-		//6. Don't Use new Object()
-		// use {} instead of new Object()
-		// use "" instead of new String()
-		// use 0 instead of new Number()
-		// use function(){} instead of new function()
+        //6. Don't Use new Object()
+        // use {} instead of new Object()
+        // use "" instead of new String()
+        // use 0 instead of new Number()
+        // use function(){} instead of new function()
 
-		//7. Beware(주의) of Automatic Type Conversions(전환)
-		var bewareConversions = "hello";
-		bewareConversions = 0;
+        //7. Beware(주의) of Automatic Type Conversions(전환)
+        var bewareConversions = "hello";
+        bewareConversions = 0;
 
-		//8. Use === comparison
-		// The == comparison operator always converts (to matching types) berfore comparison
-		// ==는 비교전에 항상 형변환이 이루어진다.
-		// The === operator forces comparison of values and type
-		// === 연산자는 값과 데이타타입 비교가 이루어진다.
-		console.log('===== 8. comparison operator =======');
-		console.log(1==true);
-		console.log(1 === true);
+        //8. Use === comparison
+        // The == comparison operator always converts (to matching types) berfore comparison
+        // ==는 비교전에 항상 형변환이 이루어진다.
+        // The === operator forces comparison of values and type
+        // === 연산자는 값과 데이타타입 비교가 이루어진다.
+        console.log('===== 8. comparison operator =======');
+        console.log(1==true);
+        console.log(1 === true);
 
-		//9. Use Parameter Defaults
-		//	If a function is called with a missing arguments, the value of the missing argument is set to undefined.
-		//	Undefined values can break your code. Ti is a good habit to assing default values to arguments.
-		
-		function myFunction(x,y){
-			if(x === undefined ){
-				x = 0;
-			}
-		}
+        //9. Use Parameter Defaults
+        //  If a function is called with a missing arguments, the value of the missing argument is set to undefined.
+        //  Undefined values can break your code. Ti is a good habit to assing default values to arguments.
+        
+        function myFunction(x,y){
+            if(x === undefined ){
+                x = 0;
+            }
+        }
 
-		//10. Avoid Using eval()
+        //10. Avoid Using eval()
 
-		
-		
+        
+        
 
 
-	</script>
+    </script>
 </body>
 </html>

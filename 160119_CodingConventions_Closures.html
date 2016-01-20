@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    //day5
+    // Good Coding Conventions
+    // Spaces Around Operators
+    //var x = y + z;
+
+    // 들여쓰기 
+    // Code Indentation 
+    // Always use 4 spaces for indentation for code blocks;
+    // Do not use tabs for indentation. Different editos interpet tabs differently.
+    
+
+    /////////// 클로져(Closures) //////////////
+    // function init(){
+    //     var name = "SELO";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+
+    //위 코드와 비교해서 생각해보자
+    // function makeFunc(){
+    //     var name = "SELObymakeFunc";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName();
+    // }
+
+    // var myFunc = makeFunc();
+    // myFunc();
+
+    //분명 지역변수 name은 makeFunc()가 종료되면 사라질텐데 이코드는 작동한다. 무언가 다른원리가 작동하고있는 것을 유추할 수 있다.
+    //답은 myFunc()가 클로져를 갖는다는 것. 클로져는 두 개의 것으로 이루어진 특별한 오브젝트이다. 첫번째는 함수이고, 두 번째는 그 함수가 만들어진 환경이다. 그 함수가 만들어진 환경은 함수가 만들어질 때 사용할 수 있었던 변수들로 이루어진다. 이 경우에 myFunc는 displayName함수와 "SELO..."문자열을 포함하는 클로져이다.
+
+
+    function makeAdder(x){
+        return function(y){
+            return x + y;
+        }
+    }
+
+    var add2 = makeAdder(2);
+    var add10 = makeAdder(10);
+
+    console.log(add2(3));
+    console.log(add10(5)); //15
+    //print(add2(3));  //5
+    //
+    // 클로져는 참 흥미롭고 유용하게 사용될 것 같다. 
+    // makeAdder는 함수를 리턴하는 함수공장이다. 특정한 수를 인자에 더해서 돌려주는 함수들을 '찍어낸다'. 위의 코드에서는 두개의 함수를 찍어냈다. 첫째는 인자에 2를 더하는 함수, 둘째는 인자에 10을 더하는 함수이다.
+    // add2, add10은 둘다 클로져이다. 두 함수는 같은 정의를 가지지만 다른 환경을 저장한다. add2의 환경에서 x는 2이지만 add10의 환경에서는 x는 10이다.
+
+    // 참고사이트 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures 
+
+
+
+    
+    </script>
+</body>
+</html>

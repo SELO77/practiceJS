@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Day8 Closures</title>
+</head>
+<body>
+	<p id="help">Helpful notes will appear here</p>
+	<p>E-mail: <input type="text" id="email" name="email"> </p>
+	<p>Name: <input type="text" id="name" name="name"> </p>
+	<p>Age: <input type="text" id="age" name="age"> </p>
+	<script>
+		//day8
+		// 반복문안에서의 잘못된 클로져 사용
+		
+		// function showHelp (help) {
+		//  	document.getElementById('help').innerHTML = help;
+		// }
+
+		// function setupHelp(){
+
+		// 	var helpText = [
+		// 		{'id': 'email', 'help':'Your e-mail address'},
+		// 		{'id': 'name', 'help':'Your full name'},
+		// 		{'id': 'age', 'help':'Your age (you must be over 16)'}
+		// 	];
+
+		// 	console.log(helpText.length);
+
+		// 	for (var i = 0; i < helpText.length; i++) {
+		// 		var item = helpText[i];
+		// 		document.getElementById(item.id).onfocus = function() {
+		// 			showHelp(item.help);
+		// 			console.log("onfocus");
+		// 		}
+		// 	}
+		// }
+
+		// setupHelp();
+
+		//세개의 도움말을 정의하지만 맨 처음 부분만 작동하게됨. 이유는 뭘까?
+		// onfocus 이벤트에 지정한 함수가 클로져라는 것이다. 이 클로져는 함수 본체와 setupHelp함수의 스코프를 갖는다. 이때 세개의 클로져가 만들어졌지만 각 클로져는 하나의 환경을 공유한다. 반복문이 끝나고 onfocus 콜백이 실행될 때 콜백의 환경에서 item 변수는 (세개의 클로져가 공유한다) helpText 리스트의 마지막 요소를 가리키고 있기 때문
+		
+		//그럼 위의 문제를 해결해보자.
+		
+		function showHelp (help) {
+		 	document.getElementById('help').innerHTML = help;
+		}
+
+		function makeHelpCallback(help){
+			return function(){
+				showHelp(help);
+			};
+		}
+
+		function setupHelp(){
+			var helpText = [
+				{'id': 'email', 'help':'Your e-mail address'},
+				{'id': 'name', 'help':'Your full name'},
+				{'id': 'age', 'help':'Your age (you must be over 16)'}
+			];
+			for (var i = 0; i < helpText.length; i++){
+				var item = helpText[i];
+				document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
+			}
+		}
+
+		setupHelp();
+
+		// 위와 같이 함수 공장을 사용하여 문제를 해결했다.
+		// 콜백메소드가 하나의 환경을 공유하지 않고 makeHelpCallback 함수가 만든 새로운 환경을 가진다. 이 환경에는 helpText 배열로부터 해당하는 문자열이 help변수에 담겨있다.
+		
+		
+		// https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
+	</script>
+</body>
+</html>

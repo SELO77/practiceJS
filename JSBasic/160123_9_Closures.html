@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Day9 Closures 선능에 관하여</title>
+</head>
+<body>
+
+	<script>
+		// function MyObject(name, message) {
+		// 	this.name = name.toString();
+		// 	this.message = message.toString();
+		// 	this.getName = function(){
+		// 		return this.name;
+		// 	};
+		// 	this.getMessage = function(){
+		// 		return this.message;
+		// 	};
+		// }
+
+		//위의 객체는 일일히 메쏘드를 만들면서 클로져의 이점을 살리지 못하고 있다.
+		//자바 클래스 코딩 방식.....
+		
+		function MyObject(name, message){
+			this.name = name.toString();
+			this.message = message.toString();
+		}
+
+		MyObject.prototype = {
+			getName: function(){
+				return this.name;
+			},
+			getMessage: function(){
+				return this.message;
+			}
+		};
+
+		//위 코드는 상속된 속성은 모든 오브젝트에서 사용될 수 있고 메쏘드 정의가 오브젝트가 생성될 때마다 일어나지 않는다.
+		//다음장에서는 프로토타입을 공부해 봅시다.
+		
+		console.log( x === undefined );
+		console.log(x);
+		var x = 3;
+
+		var myvar = "my value";
+
+		(function(){
+			console.log(myvar);
+			var myvar = "local value";
+		})();
+
+		
+
+
+
+
+		
+	</script>
+</body>
+</html>

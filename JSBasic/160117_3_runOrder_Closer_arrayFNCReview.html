@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+	<script>
+	// 자바스크립트의 실행 순서
+	// 아래의 코드실행결과를 예측해보시오.
+	
+	// console.log('A');
+	// setTimeout(function(){
+	// 	console.log('B');
+	// },0);
+	// console.log('C');
+
+	// //자바스크립트의 함수중에는 웹 브라우저에 처리를 부탁하는 함수가 있다.
+	// //
+	// while(true){
+	// 	break;
+	// }
+
+	// var test = function(){
+	// 	for(var i=0; i<3; i++){
+	// 		setTimeout(function(){
+	// 			console.log(i);
+	// 		},0);
+	// 	}
+	// }
+
+
+	//클로저를 활용 문제를 해결함. 상당히 어려운 개념이다.
+	//내가 느낀대로 정리하자면 특정변수를 함수호출순서에 상관없이 사용할 수 있게만드는 기법.
+	//Lamda기법과도 연관
+	// for( var i = 0 ; i < 3 ; i++ ){
+	// 	(function(closed_i){
+	// 		setTimeout(function(){
+	// 			console.log(closed_i);
+	// 		},0);			
+	// 	})(i);
+	// }
+
+	var array = [];
+	//console.log(typeof(array));
+	//array.push(3);
+	for( var i=0 ; i<3 ; i++){
+		array.push(i);
+	}
+	console.log(array.toString());
+	console.log(array);
+	console.log(array.shift());
+
+	//console.log('1단계 :'+array);
+	console.log('=======')
+	//array.pop() 은 last Element를 remove 하면서 return!!
+	console.log(array[1]);
+	console.log('popping :'+array.pop());
+
+	console.log('2단계 :'+array);	
+	console.log(array.unshift('unshiftSomething'));
+	console.log(array.toString());
+	console.log(array.length);
+	array[array.length] = 'addElement';
+
+	console.log("===END====");
+	console.log('array :'+array);
+	delete array[1];
+	console.log(array.toString());
+	console.log(array.length);
+	</script>
+
+</body>
+</html>

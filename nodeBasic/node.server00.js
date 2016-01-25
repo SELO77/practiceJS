@@ -6,3 +6,6 @@ http.createServer(function (request, response) {
 }).listen(52274, function(){
 	console.log('Server running at http://127.0.0.1:52274/');
 });
+
+// writen on macvim by SELO
+// thanks for comming ^^

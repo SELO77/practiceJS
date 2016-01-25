@@ -15,37 +15,37 @@
 	</div>
 	<script>
 		//Day4 
-		function returnFNC(){
-			return function(){
-				console.log('returnFNC');
-			}
-		}
+		// function returnFNC(){
+		// 	return function(){
+		// 		console.log('returnFNC');
+		// 	}
+		// }
  
- 		returnFNC()();
+ 	// 	returnFNC()();
 
- 		//함수를 매개변수로 전달
+ 	// 	//함수를 매개변수로 전달
  		
- 		//클로저
- 		function greeting(name){
- 			var output = "hello "+name+"..!";
- 			return function(){
- 				console.log(output);
- 			}
- 		}
+ 	// 	//클로저
+ 	// 	function greeting(name){
+ 	// 		var output = "hello "+name+"..!";
+ 	// 		return function(){
+ 	// 			console.log(output);
+ 	// 		}
+ 	// 	}
 
- 		greeting('SELO')();
-		//console.log(output);
+ 	// 	greeting('SELO')();
+		// //console.log(output);
 		
-		var test1 = greeting('CHAN');
-		var test2 = greeting('SERIM');
+		// var test1 = greeting('CHAN');
+		// var test2 = greeting('SERIM');
 
-		test1();
-		test2();
-		console.log('===========')
+		// test1();
+		// test2();
+		// console.log('===========');
 		//클로저 끝
 		//
 		
-		//자바스크립트 내장함수
+		//자바스크립트 내장함수 
 		// 타이머함수란 특정한 시간에 특정함수를 실행할게 있게 도와주는 함수
 
 		setTimeout(function(){
@@ -72,10 +72,6 @@
 		function testTimeFnc(){
 			console.log('testTimeout :'+arguments[0]);
 		}
-
-		
-
-
 
 	</script>
 </body>

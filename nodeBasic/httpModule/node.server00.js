@@ -28,9 +28,6 @@ server.on('close', function(){
 	console.log('Close On');
 });
 
-
-
-
 server( function(request, response){
 	response.end('hello');
 }).listen(52273);

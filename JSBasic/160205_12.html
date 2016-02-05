@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Day12</title>
+
+
+	<style media="screen">
+		* {
+		  	-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		    -ms-box-sizing: border-box;
+		    box-sizing: border-box;
+		}
+		a {
+			color : "red";
+		}
+
+		a:hover {
+			color : "blue";
+		}
+	</style>
+
+</head>
+<body>
+	<input id="checkboxTest" type="checkbox" name="checkTest" value="1" checked><br><br>
+	<a href="" title="">회원가입</a>
+	<a href="" title="">비밀번호 찾기</a>
+	<div>
+		<h1>Hello World</h1>
+		<h2>Hello World</h2>
+		<h3>Hello World</h3>
+		<h4>Hello World</h4>
+	</div>
+	<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+	<script>
+	// var o = {
+	// 	a:1,
+	// 	b:2
+	// }
+	// console.log(o.a, o.b);
+
+	// o.b = 3;
+	// o.c = 4;
+
+	// console.log(o.b, o.c);
+	// console.log(o.d);
+	// console.log(o.Prototype);
+
+	// var o = {
+	// 	a: 2,
+	// 	m: function(b) {
+	// 		return this.a + 1;
+	// 	}
+	// };
+	// console.log(o);
+	// console.log(o.m(5)); // 3
+	// o.a = 0;
+
+	// var p = Object.create(o);
+	// p.a = 12;
+	// console.log(p);
+	// console.log(p.m()); // 13
+	// 
+	
+
+// 	
+// 		document.getElementById("test").addEventListener("click", function( event ) {
+//     // display the current click count inside the clicked div
+//     event.target.innerHTML = "click count: " + event.detail;
+// }, false);
+// 	
+	
+	//AllPay checkbox validation check 를 위한 테스트 
+	
+	var checkBox = document.getElementById('checkboxTest');
+	
+	checkBox.addEventListener("click", function( event ) {
+		console.log("event :"+event);
+		checkBoxClickEvent();
+	});
+
+	function checkBoxClickEvent() {
+		console.log("== checkBox click!! ==");
+		console.log("typeof checkBox :"+typeof checkBox);
+		console.log(checkBox.checked); // return Boolean
+	}
+
+	//AllPay tag Selector test
+	var atag = document.getElementsByTagName('a');
+	//아래 엘리먼트를 확인하면 엘리먼트 객체가 갖고 있는 속성들을 확인할 수 있다. 매우중요!!
+	console.log(atag);
+	console.log(atag[0].innerHTML);
+	console.log("====");
+	for(var i = 0; i < atag.length; i++){
+		console.log(atag[i].innerText);
+		if (atag[i].innerText.indexOf("회원가입") >= 0) {
+			var tempForCss = atag[i].style;
+			console.log(typeof tempForCss);
+			tempForCss.color = "green";
+			tempForCss.fontWeight = "bolder";
+			tempForCss.fontSize = "20px";
+		}
+	}
+
+	$('h1').css('color','#78d5a0');
+	$('h1').css('fontWeight','border');
+	
+
+	</script>
+	
+</body>
+</html>

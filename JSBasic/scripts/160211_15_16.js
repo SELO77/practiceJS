@@ -21,10 +21,13 @@
 		output += students[i].toString() + '\n';
 	}
 
-	console.log(typeof prompt(output));
+	//console.log(typeof prompt(output));
 	console.log('onLoad Function');
+
+	console.log(makeStudent('bye', 1, 1, 1, 1).getSum());
 })();
 
+//객체 생성 함수 but 생성자쓰면됨.
 function makeStudent(name, korean, math, english, science) {
 	var willReturn = {
 		name : name,
@@ -52,5 +55,21 @@ function showView() {
 	var showView = document.getElementById('showView');
 	var sum = makeStudent('이새로찬', 50, 100, 50, 100).getSum();
 	showView.innerHTML = sum;
-	console.log('showView()');
+	console.log('showView()', showView);
+
+	var some = document.getElementsByClassName('some')[0];
+	console.log('========');
+	console.log(document.getElementsByClassName('some')[0]);
+	console.log(some);
+	console.log(some.style.display);	
+	some.style.display = 'block';
 }
+
+//jquery 와 JS 의 DOM Selecotr 비교
+console.log('JS',document.getElementById('showView'));
+console.log('jquery :',$('#showView'));
+console.log(document.getElementsByClassName('some')[0]);
+//document.getElementsByClassName('some')[0].style.display = 'block';
+console.log($('.some'));
+
+//$('.some').css('display','block');

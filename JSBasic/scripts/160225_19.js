@@ -38,20 +38,34 @@ console.log("Day19 Date Object");
 // argument format : "December 25, 1999"
 function calDDay(firstDay, lastDay) {
 	console.log("==calDDay function start==");
-	console.log("arguments.length : " + arguments.length);
+	
 	for (index in arguments) {
-		console.log(arguments[index]);
+		console.log("argumet[ %d ] : %d", index, arguments[index]);
 	}
 
 	if (arguments.length === 2) {
+
+		console.log("1. arguments.length %d", arguments.length);
 		var firstDay = makeFromDateToTime(firstDay);
 		var lastDay = makeFromDateToTime(lastDay);
+
 	} else if(arguments.length === 1) {
-		var firstDay = new Date().getTime;
-		var lastDay = makeFromDateToTime(lastDay);
+		console.log("  ");
+		console.log("2. arguments.length %d", arguments.length);
+		console.log(arguments[0]);
+		//var firstDay = Date.getTime();
+		//var firstDay =
+		var lastDay = makeFromDateToTime(arguments[0]);
+		console.log(firstDay);
+		console.log(lastDay); //1456369692495
+
 	} else {		
+
+		console.log("arguments.length %d", arguments.length);
 		return alert(" Input 1ea, 2ea Argument");
+
 	}
+
 	console.log("firstDay %d lastDay %d", firstDay, lastDay);
 	var millisecondPerDay = 24 * 60 * 60 * 1000;
 
@@ -61,18 +75,17 @@ function calDDay(firstDay, lastDay) {
 	return console.log("*** dDay : " + dDay + " ***");
 }
 
-function makeFromDateToTime(date) {
-	console.log("==makeFromDateToTime strart==");
-	var timeFormat = new Date(date).getTime();
-	console.log(timeFormat);
+function makeFromDateToTime(targetDate) {
+	console.log("==makeFromDateToTime strart with %d ==", targetDate);
+	var timeFormat = new Date(targetDate).getTime();
 	console.log("==makeFromDateToTime end==");
 	return timeFormat;
 }
 
 window.onload = function() {
 	console.log("window onload function");
-	calDDay("February 25, 2016", "April 13, 2016");
+	//calDDay("February 25, 2016", "April 13, 2016"); // 1456326000000 1460473200000
 	calDDay("April 13, 2016");
-	calDDay();
+	//calDDay();
 }
 

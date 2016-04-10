@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Day19_Date</title>
+	<style>
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="content">
+			<div class="some">
+				<h1>JS Practice</h1>
+			</div>
+			<div id="showView">
+				<h1></h1>
+			</div>
+			<input type="button" name="showView" placeholder="Click" value="Click" onclick="toggleHidden()">
+		</div>
+		<div id="test">node1
+      <div>
+        &nbsp;node2
+        <h1>node3</h1>
+      </div>
+    </div>
+	</div>
+	<script>
+		console.log("JS Practice");
+		var htmlel = document.documentElement;
+		console.log(htmlel);
+
+    var headNode = htmlel.getElementsByTagName('head')[0];
+    console.log(headNode.nodeName);
+    console.log("headNode",headNode);
+
+    var bodyElement = headNode.nextSibling.nextSibling;
+    console.log(bodyElement);
+
+    var inputElement = bodyElement.getElementsByTagName('input')[0];
+    console.log(inputElement);
+
+    //아래 코드를 실행 콘솔창의 속성들을 확인하면 노드와 엘리먼트의 차이를 알수 있다.
+    var idTestDiv = document.getElementById('test');
+    console.log(idTestDiv);
+    console.log("dom.children:",idTestDiv.children);
+
+    var arr = new Array();
+    console.log(arr.protoype);
+
+
+
+	</script>
+</body>
+</html>
